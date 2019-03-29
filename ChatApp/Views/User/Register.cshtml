@@ -1,0 +1,23 @@
+﻿@model ChatApp.Models.UserModel
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>View</h2>
+
+@using (Html.BeginForm("CreateAccount", "User", new { userModel = Model }))
+{
+    @Html.TextBoxFor(model => model.EmailAddress)
+
+    @Html.TextBoxFor(model => model.Password)
+
+    @Html.TextBoxFor(model => model.ConfirmPassword)
+
+    @Html.TextBoxFor(model => model.FirstName)
+
+    @Html.TextBoxFor(model => model.LastName)
+
+    <input type="submit" name="Submit" />
+
+}
